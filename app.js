@@ -27,25 +27,31 @@ function startQuiz() {
     const lastName = prompt('What is your last name?');
     name += lastName;
 
-    const isWillieFromTexas = prompt('Is Willie from Texas (yes/no)?');
+    const isWillieFromTexas = prompt('Is Willie from Texas?');
     if (isWillieFromTexas === true) {
         correctAnswer++;
     }
 
-    const isWillieOneOfTheGreats = prompt('Is Willie one of the greats of all time (yes/no)?');
+    const oneOfWilliesSongs = prompt('Is Poncho and Left one of Willies songs listed below?');
+    if (oneOfWilliesSongs === true) {
+        correctAnswer++;
+    }
+
+    const isWillieOneOfTheGreats = prompt('Is Willie one of the greats of all time?');
     if (isWillieOneOfTheGreats === true) {
         correctAnswer++;
     }
 
-    let response = 'Your name is ' + name;
+    let response = `Your name is ${name}`;
 
-    if (correctAnswer > 1) {
+    if (correctAnswer > 0) {
         response += ' and you are a true Willie fan!';
     } else {
         response += ' you need to turn on some Willie and be enlightened!';
     }
 
     result.textContent = response;
+    //result.textContent = correctAnswer;
 }
 
 quizButton.addEventListener('click', startQuiz);
