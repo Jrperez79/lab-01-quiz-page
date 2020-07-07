@@ -1,4 +1,5 @@
 // import functions and grab DOM elements
+import { countsAsYes } from '../is-yes.js';
 
 //Reference needed DOM elements
 const quizButton = document.getElementById('quiz-button');
@@ -31,14 +32,14 @@ function startQuiz() {
         correctAnswer++;
     }
 
-    const isWillieOneOfTheGreats = prompt('Is Willie one of the greats of all time (yes/no)?')
+    const isWillieOneOfTheGreats = prompt('Is Willie one of the greats of all time (yes/no)?');
     if (isWillieOneOfTheGreats === true) {
         correctAnswer++;
     }
 
     let response = 'Your name is ' + name;
 
-    if (correctAnswer >= 1) {
+    if (correctAnswer > 1) {
         response += ' and you are a true Willie fan!';
     } else {
         response += ' you need to turn on some Willie and be enlightened!';
